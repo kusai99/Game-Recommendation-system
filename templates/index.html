@@ -1,0 +1,59 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+
+    <body>
+        <div class="main">
+            <h1>Video Game Recommendation</h1>
+        
+            <form method="post" action="{{ url_for('recommend') }}">
+                <input type="text" name="genres" placeholder="Input the genre(s) spereated by commas or 'skip'. ex: Action, Sports, Shooter" required="required" />
+                <input type="text" name="paltforms" placeholder="Input the platform(s) spereated by commas or 'skip'. ex: PS4, PC, Wii" required="required" />
+                <input type="text" name="games_names" placeholder="Input game name(s) of games(s) that you previously liked, spereated by commas or 'skip' ex: fifa, Halo, MARIO" required="required" />
+        
+                <button type="submit"  class="btn btn-primary btn-block btn-large floated">RUN (Tip: the more you tell us, the better the results)</button>
+                <a href="{{ url_for('refresh') }}"> <button type="reset" class="refresh floated refresh-block"  >Clear Fields</button></a>
+                
+            </form>
+        
+           <br>
+           <br>
+            
+
+           <table style=" border-collapse: separate;
+           border-spacing: 0 5px;margin-left: -70%; width:300%;  margin-top : 10px;">
+            <tr style="width: auto;
+            text-align: center;
+            border: 1px solid black;">
+              {% for h in headings%}
+                <th style="width: auto;
+                text-align: center;
+                border-top: 2px solid #b1b1b1;
+                border: 1px solid #b1b1b1;
+                padding: 5px; background-color: #072738;">{{ h }}</th>
+              {% endfor %}
+            </tr>
+            
+            {% for row in recommendations %}
+            <tr style = "background-color: #03486d; width: auto;
+            text-align: center;
+            border: 1px solid black;">
+                
+                {% for cell in row %}
+                <td style="background-color: #03486d; width: auto;">{{cell}}</td>
+                {%endfor%}
+            </tr>
+            {% endfor %}
+          
+          </table>
+
+
+           <!-- {{ recommendations }} -->
+        
+         </div>
+        
+    </body>
+</html>
+
