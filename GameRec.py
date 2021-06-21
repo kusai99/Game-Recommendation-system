@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from tabulate import tabulate
 import string
 import settings 
-df = pd.read_csv(r"C:\Users\user\Desktop\GRS\Cleaned_dataset.csv")
+df = pd.read_csv("Cleaned_dataset.csv")
 
 df = df.iloc[0:10000,:]
 
