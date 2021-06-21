@@ -1,1 +1,1 @@
-web: python project/manage.py runserver 0.0.0.0:$PORT --noreload
+web: python project/app.py runserver 0.0.0.0:$PORT --noreload
