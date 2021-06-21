@@ -6,12 +6,11 @@
 
     <body>
         <div class="main">
-            <h1>Video Game Recommendation</h1>
-        
+            <h3><span style="font-weight: bold; font-size: 22px; color: rgb(10, 218, 103);">Game Recommendation System</span><span style = "color: rgb(218, 218, 218); font-size: 20px; display: block;">A data science project</span></h3>
             <form method="post" action="{{ url_for('recommend') }}">
                 <input type="text" name="genres" placeholder="Input the genre(s) spereated by commas or 'skip'. ex: Action, Sports, Shooter" required="required" />
                 <input type="text" name="paltforms" placeholder="Input the platform(s) spereated by commas or 'skip'. ex: PS4, PC, Wii" required="required" />
-                <input type="text" name="games_names" placeholder="Input game name(s) of games(s) that you previously liked, spereated by commas or 'skip' ex: fifa, Halo, MARIO" required="required" />
+                <input type="text" name="games_names" placeholder="Input game(s) that you like, spereated by commas or 'skip' ex: fifa, Halo, MARIO" required="required" />
         
                 <button type="submit"  class="btn btn-primary btn-block btn-large floated">RUN (Tip: the more you tell us, the better the results)</button>
                 <a href="{{ url_for('refresh') }}"> <button type="reset" class="refresh floated refresh-block"  >Clear Fields</button></a>

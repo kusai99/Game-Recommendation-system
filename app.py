@@ -8,8 +8,6 @@ import settings
 app  = Flask(__name__)
 
  
-
-
 @app.route("/", methods = ['POST', 'GET'])
 def home():
     if request.method == 'GET':
@@ -42,8 +40,7 @@ def recommend():
         headings = ("Game", "Genre", "Platform", "Year of release", "Publisher", "Critic score", "User score", "Rating", "Compatibility")
         return render_template('index.html', recommendations =  recommendation_list, headings = headings)   
 
-        # recommendation_list.append(make_recommendation(features))
-        # return render_template('index.html', recommendations =  recommendation_list)
+       
      else :
          recommendation_list = []
          return render_template ('home')
